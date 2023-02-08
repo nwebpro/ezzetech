@@ -1,10 +1,11 @@
 import React from 'react';
+import Achievements from './Achievements/Achievements';
 
 const Home = () => {
     return (
-        <div>
-            Home
-        </div>
+        <>
+            <Achievements />
+        </>
     );
 };
 

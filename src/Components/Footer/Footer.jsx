@@ -103,7 +103,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='text-center mt-[60px] pt-5 pb-2 border-t'>
-                        <p className='text-xs leading-5 uppercase'>Copyright 2023 Ezze Technology Ltd. All Rights Reserved.</p>
+                        <p className='text-xs leading-5 uppercase'>Copyright © 2023 Ezze Technology Ltd. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
