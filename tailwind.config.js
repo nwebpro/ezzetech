@@ -22,6 +22,7 @@ module.exports = {
       },
       backgroundImage: {
         'footer-bg': "url('../src/assets/images/footer_bg.png')",
+        'counter-bg': "url('../src/assets/images/cunter.jpg')",
       },
       boxShadow: {
         '3xl': '0 4px 80px rgba(0,0,0,.1)',
