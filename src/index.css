@@ -6,6 +6,19 @@
 @tailwind utilities;
 
 @layer components {
+    /* What We Do */
+    .service_box_wrapper {
+        @apply bg-white p-8 hover:shadow-3xl transition duration-200
+    }
+    .service_icon {
+        @apply w-[60px] h-[60px] rounded-full p-3 text-ezze-theme mb-3 transition duration-300
+    }
+    .service_title {
+        @apply text-xl font-bold mb-2 text-body-text
+    }
+    .service_desc {
+        @apply text-body-text text-base
+    }
     /* Footer Component Tailwind Css Classes */
     .ezze_mountain_footer {
         @apply block absolute top-0 w-full left-0 bg-white  h-[100%];

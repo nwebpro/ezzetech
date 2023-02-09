@@ -25,7 +25,7 @@ const achievementsData = [
 
 const Achievements = () => {
     return (
-        <section className='py-[100px] px-[15px]'>
+        <section className='py-[50px] md:py-20 lg:py-[100px] px-[15px]'>
             <div className="container mx-auto font-OpenSans">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
                     <div className='col-span-1'>
