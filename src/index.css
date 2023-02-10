@@ -69,9 +69,9 @@
 .our_client_partner {
     grid-template-columns: repeat(8, 1fr);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 835px) {
     .our_client_partner {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }
     
