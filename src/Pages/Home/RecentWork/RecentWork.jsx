@@ -40,7 +40,7 @@ const RecentWork = () => {
     return (
         <section className='bg-ezze-theme py-[50px] md:py-20 lg;py-[100px] px-[15px] font-OpenSans'>
             <div className="container mx-auto">
-                <h2 className='text-white text-center text-4xl font-bold mb-10 capitalize'>Take a look at our <br />recent project</h2>
+                <h2 className='text-white text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-10 capitalize'>Take a look at our <br />recent project</h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-10'>
                     {
                         recenProject.map(project => (
