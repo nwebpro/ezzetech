@@ -8,7 +8,7 @@
 @layer components {
     /* What We Do */
     .service_box_wrapper {
-        @apply bg-white p-8 hover:shadow-3xl transition duration-200
+        @apply bg-white p-8 hover:shadow-3xl transition duration-200 relative
     }
     .service_icon {
         @apply w-[60px] h-[60px] rounded-full p-3 text-ezze-theme mb-3 transition duration-300
@@ -30,6 +30,17 @@
     .ezze_footer_p {
         @apply text-base leading-[30px]
     }
+}
+.service_box_wrapper:hover::after {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    content: '';
+    top: 30%;
+    left: 50%;
+    background: #178BE9;
+    transform: translateX(-50%);
+    filter: blur(90px);
 }
 .after_style::after {
     position: absolute;
