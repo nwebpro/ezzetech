@@ -42,16 +42,6 @@
     transform: translateX(-50%);
     filter: blur(90px);
 }
-.recent_project:hover::after {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    content: '';
-    left: 15%;
-    bottom: 25px;
-    background: #178BE9;
-    filter: blur(70px);
-}
 .after_style::after {
     position: absolute;
     left: 0;

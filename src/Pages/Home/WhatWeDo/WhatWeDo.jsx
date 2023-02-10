@@ -2,6 +2,9 @@ import React from 'react';
 import Marketing from '../../../Components/SvgIcon/Marketing';
 import Mobile from '../../../Components/SvgIcon/Mobile';
 import WebDev from '../../../Components/SvgIcon/WebDev';
+import DomainHosting from '../../../Components/SvgIcon/DomainHosting';
+import LiveStreaming from '../../../Components/SvgIcon/LiveStreaming';
+import EBusinessSolution from '../../../Components/SvgIcon/EBusinessSolution';
 
 const serviceData = [
     {
@@ -24,19 +27,19 @@ const serviceData = [
     },
     {
         id: 4,
-        icon: <WebDev />,
+        icon: <DomainHosting />,
         title: 'Domain & Hosting',
         desc: 'Ezze Technology Ltd. realizes that now a day’s everyone needs an online presence, regardless of their line of business or technical expertise. With an authoritative and straightforward way to hosting solution, we are able to cover everyone’s need and requirements.'
     },
     {
         id: 5,
-        icon: <Mobile />,
+        icon: <LiveStreaming />,
         title: 'Live Streaming',
         desc: 'Live Streaming video is content that sent in compressed form over the Internet and displayed by the viewer in real time. We ensure video streaming platform which allows customers to live their video content in a seamless way.'
     },
     {
         id: 6,
-        icon: <Marketing />,
+        icon: <EBusinessSolution />,
         title: 'E-Business Solution',
         desc: 'Ezze Technology Ltd. brings a package program that lets you build, customize, and run an online store. We will walk you through the entire process: hosting, design, pricing and payment options, marketing tools and reports.'
     }
@@ -47,7 +50,7 @@ const WhatWeDo = () => {
         <section className='bg-[#F9F9F9] py-[50px] md:py-20 lg:py-[100px] font-OpenSans px-[15px]'>
             <div className="container mx-auto">
                 <h2 className='text-center text-3xl font-bold mb-10 text-body-text'>WHAT <span className='text-ezze-theme'>WE DO</span></h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] cursor-pointer transition-all duration-300'>
                     {
                         serviceData.map(service => (
                             <div className='service_box_wrapper group' key={ service.id }>
