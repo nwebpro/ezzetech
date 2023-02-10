@@ -57,3 +57,12 @@
     box-shadow: 0 7px 30px 0 rgb(132 128 177 / 50%) !important;
     background-color: #178BE9 !important;
 }
+.heading_border::before {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 3px;
+    background-color: #178BE9;
+    left: 0;
+    bottom: -10px;
+}
