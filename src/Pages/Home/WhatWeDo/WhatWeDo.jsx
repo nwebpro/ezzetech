@@ -31,7 +31,7 @@ const serviceData = [
     {
         id: 5,
         icon: <Mobile />,
-        title: 'Live Streming',
+        title: 'Live Streaming',
         desc: 'Live Streaming video is content that sent in compressed form over the Internet and displayed by the viewer in real time. We ensure video streaming platform which allows customers to live their video content in a seamless way.'
     },
     {
