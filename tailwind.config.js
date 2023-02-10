@@ -26,6 +26,7 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '0 4px 80px rgba(0,0,0,.1)',
+        'navbar': '0 8px 20px 0 rgb(0 0 0 / 10%)',
       },
     },
   },

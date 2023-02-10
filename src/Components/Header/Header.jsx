@@ -1,107 +1,95 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/images/logo.png'
+import { HiBars3, HiXMark } from 'react-icons/hi2'
+
+const navitemData = [
+    {
+        id: 1,
+        title: 'Portfolio',
+        link: '/'
+    },
+    {
+        id: 2,
+        title: 'About Us',
+        link: '/'
+    },
+    {
+        id: 3,
+        title: 'Press',
+        link: '/'
+    },
+    {
+        id: 4,
+        title: 'Career',
+        link: '/'
+    },
+    {
+        id: 5,
+        title: 'Contact',
+        link: '/'
+    }
+]
 
 const Header = () => {
-    const [navbar, setNavbar] = useState(false)
-    
-    return (
-        <nav className="w-full bg-purple-500 shadow">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
-                    <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
-                            <h2 className="text-2xl font-bold text-white">LOGO</h2>
-                        </a>
-                        <div className="md:hidden">
-                            <button
-                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                                onClick={() => setNavbar(!navbar)}
-                            >
-                                {navbar ? (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6 text-white"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                ) : (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6 text-white"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4 6h16M4 12h16M4 18h16"
-                                        />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                            navbar ? "block" : "hidden"
-                        }`}
-                    >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Home</a>
-                            </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Blog</a>
-                            </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">About US</a>
-                            </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Contact US</a>
-                            </li>
-                        </ul>
+    const [nav, setNav] = useState(false)
+    const [navColor, setNavColor] = useState('transparent')
+    const [navShadow, setNavShadow] = useState('none')
 
-                        <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                    <a
-                        href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                    >
-                        Sign in
-                    </a>
-                    <a
-                        href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                    >
-                        Sign up
-                    </a>
+    const handleNavbar = () => {
+        setNav(!nav)
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 90) {
+                setNavColor('#fff')
+                setNavShadow('0 8px 20px 0 rgb(0 0 0 / 10%)')
+            } else {
+                setNavColor('transparent')
+                setNavShadow('none')
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+    }, [])
+
+    return (
+        <header style={{ backgroundColor: `${ navColor }`, boxShadow: `${navShadow}` }} className={`fixed left-0 top-0 w-full z-10 ease-in duration-300`}>
+            <nav className='container mx-auto flex justify-between items-center py-2 px-[15px]'>
+                <div>
+                    <Link to=''>
+                        <img className='w-[130px] sm:max-w-[140px]' src={ logo } alt="Logo" />
+                    </Link>
                 </div>
-                    </div>
+                <div className='hidden lg:block'>
+                    <ul className='flex items-center gap-6'>
+                        {
+                            navitemData.map(item => (
+                                <li key={ item.id } className='text-[#3C3C3C] font-bold text-base hover:text-ezze-theme transition-colors duration-300'>
+                                    <Link to={ item.link }>{ item.title }</Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
-                <div className="hidden space-x-2 md:inline-block">
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                    >
-                        Sign in
-                    </a>
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                    >
-                        Sign up
-                    </a>
+                {/* Mobile Button */}
+                <div className='block lg:hidden'>
+                    <HiBars3 className='text-2xl cursor-pointer hover:text-ezze-theme transition-colors duration-300' onClick={handleNavbar} />
                 </div>
-            </div>
-        </nav>
+                <div className={`absolute top-0 w-[280px] p-10 ${nav ? 'right-0' : 'right-[-100%]'} bottom-0 bg-ezze-theme h-screen ease-in duration-500`}>
+                    <HiXMark onClick={handleNavbar} className='text-white text-2xl cursor-pointer hover:text-body-text transition-colors duration-300 mb-10 rotate-0 hover:rotate-90' />
+                    <ul className='flex flex-col gap-3'>
+                        {
+                            navitemData.map(item => (
+                                <li key={ item.id } className='text-white font-bold text-xl hover:text-body-text transition-colors duration-300'>
+                                    <Link to={ item.link }>{ item.title }</Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </nav>
+        </header>
     );
 };
 
